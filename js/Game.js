@@ -70,12 +70,21 @@ class Game {
 
         if (index === player.index){
           cars[index - 1].shapeColor = "red";
+          fill("yellow");
+          ellipse(x, y, 80, 70);
+          fill("white");
+          textSize(20);
+          text(player.name, x - 25, y - 50);
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y
         }
-       
-        //textSize(15);
-        //text(allPlayers[plr].name + ": " + allPlayers[plr].distance, 120,display_position)
+
+        if(index !== player.index) {
+          fill("white");
+          textSize(20);
+          text(allPlayers[plr].name, x - 25, y - 50);
+        }
+
       }
 
     }
